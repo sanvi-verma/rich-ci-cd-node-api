@@ -51,6 +51,7 @@ pipeline {
                           -Dsonar.sources=. \
                           -Dsonar.tests=test \
                           -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
+                           -Dsonar.host.url=http://host.docker.internal:9000 \
                           -Dsonar.login=${SONAR_TOKEN}
                     '''
                 }
