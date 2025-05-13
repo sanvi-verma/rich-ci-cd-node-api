@@ -46,13 +46,14 @@ pipeline {
             steps {
                 withSonarQubeEnv('My SonarQube Server') {
                     sh '''
-                        npx sonar-scanner \
-                          -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
-                          -Dsonar.sources=. \
-                          -Dsonar.tests=test \
-                          -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
-                           -Dsonar.host.url=http://host.docker.internal:9000 \
-                          -Dsonar.login=${SONAR_TOKEN}
+                       npx sonar-scanner \
+  -Dsonar.projectKey=node-api \
+  -Dsonar.sources=. \
+  -Dsonar.exclusions=test/** \
+  -Dsonar.tests=test \
+  -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
+  -Dsonar.host.url=http://host.docker.internal:9000 \
+  -Dsonar.token=$SONAR_TOKEN
                     '''
                 }
             }
