@@ -20,12 +20,6 @@ pipeline {
             }
         }
 
-        stage('Lint') {
-            steps {
-                sh 'npx eslint . || true' // use || true if you want to not fail on warnings
-            }
-        }
-
         stage('Test') {
             steps {
                 sh 'npx mocha'
