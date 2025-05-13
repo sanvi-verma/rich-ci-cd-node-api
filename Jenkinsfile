@@ -6,6 +6,8 @@ pipeline {
         SONAR_PROJECT_KEY = 'node-api'
         SONAR_ORG = 'your-org' // if using SonarCloud, else remove
         WEBHOOK_URL = 'https://your-api-endpoint.com/receive' // Replace with your actual API URL
+        JAVA_HOME = tool name: 'jdk-17'
+PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
     }
 
     stages {
