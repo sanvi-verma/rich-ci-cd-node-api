@@ -4,7 +4,6 @@ pipeline {
     environment {
         SONAR_SCANNER_HOME = tool 'SonarQubeScanner' // Add this tool in Jenkins global tools config
         SONAR_PROJECT_KEY = 'node-api'
-        SONAR_ORG = 'your-org' // if using SonarCloud, else remove
         WEBHOOK_URL = 'https://d12a-192-245-162-37.ngrok-free.app' // Replace with your actual API URL
     }
 
